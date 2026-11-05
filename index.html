@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guia de Mobilidade Urbana - São Paulo | CitizenTech</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header class="site-header">
+        <div class="container header-content">
+            <div class="header-text">
+                <h1>Mobilidade Urbana SP</h1>
+                <p>Guia Interativo de Transporte Coletivo - Global Solution 2026.2</p>
+            </div>
+            <a
+                href="https://www.metro.sp.gov.br/pt_BR/sua-viagem/mapa-da-rede/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="official-map-btn"
+            >
+                <span>↗</span> Mapa oficial do Metrô
+            </a>
+        </div>
+    </header>
+
+    <main class="container main-content">
+
+        <!-- Seção de Introdução -->
+        <section class="card intro-section">
+            <h2>Contextualização do Projeto</h2>
+            <div class="intro-grid">
+                <div>
+                    <h3>Problema Abordado</h3>
+                    <p>A sobrecarga na rede de transporte coletivo de São Paulo gera imprevisibilidade nos deslocamentos diários, dificultando a gestão do tempo por parte dos passageiros e a identificação de rotas acessíveis.</p>
+                </div>
+                <div>
+                    <h3>Público-Alvo</h3>
+                    <p>Trabalhadores, estudantes e cidadãos que utilizam diariamente o sistema metroferroviário paulista e buscam otimizar seus trajetos com segurança e eficiência.</p>
+                </div>
+                <div>
+                    <h3>Objetivo e Benefício</h3>
+                    <p>Fornecer um guia interativo baseado em dados locais para consulta rápida de linhas, tempo estimado e acessibilidade, resultando em viagens mais previsíveis e inclusivas.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção de Pesquisa e Filtros -->
+        <section class="card filter-section">
+            <h2>Consulta de Trajetos</h2>
+
+            <form id="searchForm" class="filter-controls">
+
+                <div class="form-group">
+                    <label for="searchInput">
+                        Pesquisar por linha, origem ou destino:
+                    </label>
+
+                    <input
+                        type="text"
+                        id="searchInput"
+                        placeholder="Ex: Linha 1, Sé, Pinheiros..."
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="accessibilityFilter">
+                        Filtrar por Acessibilidade:
+                    </label>
+
+                    <select id="accessibilityFilter">
+                        <option value="all">Todas as estações</option>
+                        <option value="accessible">Apenas rotas 100% acessíveis</option>
+                    </select>
+                </div>
+
+                <button type="submit" class="search-btn">
+                    Pesquisar
+                </button>
+
+            </form>
+        </section>
+
+        <!-- Seção de Funcionalidade Adicional: Comparador de Tempos -->
+        <section class="card comparison-section">
+            <h2>Comparador Rápido de Trajetos</h2>
+            <p class="section-desc">Selecione dois trajetos para comparar o tempo estimado de viagem e o número de paradas.</p>
+            <div class="comparison-controls">
+                <select id="routeASelect">
+                    <option value="">Selecione o Trajeto A</option>
+                </select>
+                <select id="routeBSelect">
+                    <option value="">Selecione o Trajeto B</option>
+                </select>
+                <button id="compareBtn" class="btn">Comparar</button>
+            </div>
+            <div id="comparisonResult" class="comparison-result"></div>
+        </section>
+
+        <!-- Listagem de Trajetos -->
+        <section class="routes-section">
+            <h2>Linhas e Trajetos Cadastrados</h2>
+            <div id="routesContainer" class="routes-grid">
+                <!-- Preenchido via JavaScript -->
+            </div>
+            <div id="noResults" class="no-results hidden">
+                Nenhum trajeto encontrado para os critérios informados.
+            </div>
+        </section>
+    </main>
+
+    <!-- Modal de Detalhes -->
+    <div id="routeModal" class="modal hidden">
+        <div class="modal-content">
+            <button id="closeModal" class="close-btn">&times;</button>
+            <h2 id="modalTitle">Detalhes do Trajeto</h2>
+            <div class="modal-body" id="modalBody">
+                <!-- Conteúdo dinâmico -->
+            </div>
+        </div>
+    </div>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p>Global Solution 2026.2 - CitizenTech | Todos os direitos reservados</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
